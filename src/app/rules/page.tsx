@@ -1,5 +1,10 @@
+import TsPage from "@/components/tsPage/TsPage";
 import React from "react";
 
 export default function Rules() {
-  return <div>page rules</div>;
+  return (
+    <TsPage>
+      <div>page rules</div>
+    </TsPage>
+  );
 }
