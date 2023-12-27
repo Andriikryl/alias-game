@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { opacity, expand } from "../utils/utils";
 import styles from "./style.module.css";
+import { MotionStyle } from "framer-motion";
 import clsx from "clsx";
 
 interface TsPageProps {

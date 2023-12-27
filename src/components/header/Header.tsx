@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "../container/Container";
 import styles from "./style.module.css";
 import Link from "next/link";
+import Flag from "../flag/Flag";
 
 export default function Header() {
   return (
@@ -17,6 +18,9 @@ export default function Header() {
               </li>
             </ul>
           </nav>
+          <div className={styles.flex__box}>
+            <Flag />
+          </div>
         </div>
       </Container>
     </header>
