@@ -7,11 +7,12 @@ import clsx from "clsx";
 
 interface TsPageProps {
   children: ReactNode;
+  Color?: any;
 }
 interface VariantsType {
   [key: string]: any;
 }
-export default function TsPage({ children }: TsPageProps) {
+export default function TsPage({ children, Color }: TsPageProps) {
   const anim = (variants: VariantsType, custom?: number | null) => {
     return {
       initial: "initial",
@@ -31,7 +32,13 @@ export default function TsPage({ children }: TsPageProps) {
       />
       <div className={styles.transition__container}>
         {[...Array(nbOfColumns)].map((_, i) => {
-          return <motion.div key={i} {...anim(expand, nbOfColumns - i)} />;
+          return (
+            <motion.div
+              key={i}
+              {...anim(expand, nbOfColumns - i)}
+              style={{ backgroundColor: Color }}
+            />
+          );
         })}
       </div>
       {children}

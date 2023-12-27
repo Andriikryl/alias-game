@@ -6,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 export default function Home() {
   return (
     <AnimatePresence mode="wait">
-      <TsPage>
+      <TsPage Color={"#fed9b7"}>
         <Hero />;
       </TsPage>
     </AnimatePresence>

@@ -1,0 +1,16 @@
+.play{
+    margin-block: 20px;
+}
+
+.play__box{
+    height: 100dvh;
+    background-color: #feeafa;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.play_title{
+    color: #8e9aaf;
+    font-size: clamp(20px, 5vw + 1rem, 40px);
+    text-align: center;
+}

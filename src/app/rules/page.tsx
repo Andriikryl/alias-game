@@ -1,10 +1,26 @@
+import { Container } from "@/components/container/Container";
 import TsPage from "@/components/tsPage/TsPage";
 import React from "react";
+import styles from "./style.module.css";
 
 export default function Rules() {
   return (
-    <TsPage>
-      <div>page rules</div>
+    <TsPage Color={"#ffd60a"}>
+      <section className={styles.rules}>
+        <Container>
+          <div className={styles.rules__box}>
+            <h1 className={styles.rules__title}>Alias (гра)</h1>
+            <p className={styles.descriptions}>
+              Настільна командна гра, в якій треба максимально швидко пояснити
+              своїй команді задані слова без використання однокореневих.
+            </p>
+            <p className={styles.descriptions}>
+              Чим більше слів вгадано — тим швидше команда просувається до
+              перемоги!!!
+            </p>
+          </div>
+        </Container>
+      </section>
     </TsPage>
   );
 }

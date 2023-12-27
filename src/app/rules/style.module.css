@@ -1,0 +1,17 @@
+.rules__title{
+    background-color:#003566;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffd60a;
+    font-size: clamp(20px, 5vw + 1rem, 40px);
+    text-align: center;
+    margin-block-end: 30px;
+}
+.descriptions{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #cdb4db;
+    color: #283618;
+    font-size: 20px;
+    margin-block-end: 20px;
+}
