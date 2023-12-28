@@ -104,19 +104,25 @@ export default function Play() {
                 <div className={styles.btn__groupTime}>
                   <button
                     onClick={() => handleButtonTimeClick(30)}
-                    className={styles.btn__time}
+                    className={clsx(styles.btn__time, {
+                      [styles.active]: time === 30,
+                    })}
                   >
                     30
                   </button>
                   <button
                     onClick={() => handleButtonTimeClick(60)}
-                    className={styles.btn__time}
+                    className={clsx(styles.btn__time, {
+                      [styles.active]: time === 60,
+                    })}
                   >
                     60
                   </button>
                   <button
                     onClick={() => handleButtonTimeClick(120)}
-                    className={styles.btn__time}
+                    className={clsx(styles.btn__time, {
+                      [styles.active]: time === 120,
+                    })}
                   >
                     120
                   </button>

@@ -151,6 +151,8 @@
     border-radius: 8px;
     border: 2px solid var(--black, #1B1B1B);
     background: var(--white, #FFF);
+    display: grid;
+    place-items: center;
 }
 
 .time__wrapper{
@@ -163,4 +165,9 @@
 }
 .time{
     font-size: 25px;
+}
+.active{
+    background-color: #d62828;
+    color: #edf6f9;
+    border: 3px solid #ffc300;
 }
