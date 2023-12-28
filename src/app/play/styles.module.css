@@ -30,3 +30,56 @@
     color: #e63946;
     font-size: clamp(20px, 5vw + 1rem, 40px);
 }
+.score__group{
+    max-width: 300px;
+    padding: 20px;
+    border: 2px solid #ef476f;    
+    margin-inline: auto;
+    margin-block-end: 10px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__group{
+    max-width: 300px;
+    border: 2px solid #ffc300;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-inline: auto;
+}
+.control__btn{
+    border-radius: 8px;
+    border: 2px solid var(--black, #1B1B1B);
+    background: var(--white, #FFF);
+    padding: 12px 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: Patrick Hand;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+.skip__btn{
+    background-color: #d62828;
+    color: #f1faee;
+}
+.acept__btn{
+    background-color: #a7c957;
+    color: #fdfcdc;
+}
+
+.answered{
+    background-color: #a7c957;
+    color: #fdfcdc;
+}
+.missed{
+    background-color: #d62828;
+    color: #f1faee;
+}
