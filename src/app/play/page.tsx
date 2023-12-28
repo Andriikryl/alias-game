@@ -5,25 +5,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 import clsx from "clsx";
 import { NumberBlock } from "@/components/numberBlock/NumberBlock";
-
-const data = [
-  {
-    id: 1,
-    title: "Hello",
-  },
-  {
-    id: 2,
-    title: "Word",
-  },
-  {
-    id: 3,
-    title: "Tabel",
-  },
-  {
-    id: 4,
-    title: "Welcome",
-  },
-];
+import { data } from "@/data/Data";
 
 export default function Play() {
   const [current, setCurrent] = useState(0);
@@ -48,7 +30,7 @@ export default function Play() {
             </div>
             <div className={styles.score__group}>
               <NumberBlock value={answered} className={styles.answered} />
-              <NumberBlock value={missed} className={styles.missed}/>
+              <NumberBlock value={missed} className={styles.missed} />
             </div>
             <div className={styles.btn__group}>
               <button
