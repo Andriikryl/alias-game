@@ -1,37 +1,45 @@
+.hero{
+    border: 2px solid #000;
+    background: #BEA5F3;
+    box-shadow: 4px 4px 0px 0px #000;
+}
 .title__box{
     margin-block: 20px;
     padding: 12px;
     border-radius: 8px;
 }
 
-.qa__box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
+.image__box{
+    margin-inline: auto;
+    width: max-content;
+    margin-block-end: 20px;
 }
 
-.arrow__dowBox{
-    margin-block: 100px;
-    display: grid;
-    place-items: center;
-    transform: rotate(-90deg);
-}
 .hero__title{
-    background-image: url("/lines/Circle.png");
-    background-size: 247px 90px;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 32px;
-    text-align: center;
-    color: var(--black, #0D77D3);
-    font-family: Patrick Hand;
-    font-size: 30px;
+    color: #000;
+    font-family: Bebas Neue;
+    font-size: 22.669px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: -0.3px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    margin-block-end: 30px;
+}
+.hero__title::after{
+    content: "";
+    display: block;
+    background-image: url("/hero/title-bot.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 222px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 30px;
 }
 
 .flex__group{
@@ -65,8 +73,9 @@
 
 .list{
     padding-block: 20px;
-    border-radius: var(--Firm-2, 12px);
-    border: 1px solid var(--Color-Semantic-Border-borderTertiary, #ffc300);
+    border: 2px solid #000;
+    background: #B0D5F7;
+    box-shadow: 4px 4px 0px 0px #000;
     max-width: 300px;
     margin-inline: auto;
     margin-block: 40px;
@@ -76,21 +85,53 @@
     align-items: center;
     gap: 30px;
     padding-inline-start: 0px;
-    backdrop-filter: blur(10px);
+    position: relative;
+}
+.list::after{
+    content: "";
+    display: block;
+    background-image: url("/hero/boll.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: -50px;
+    top: -30px;
+}
+.list::before{
+    content: "";
+    display: block;
+    background-image: url("/hero/regbi.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: -50px;
+    bottom: -30px;
 }
 .link{
     display: block;
-    text-decoration: none;
+    padding-block: 15px;
+    padding-inline: 24px;
+    border-radius: 9px;
+    border: 3px solid #000;
+    background: #FFC700;
+    box-shadow: 4px 4px 0px 0px #000;
     cursor: pointer;
-    padding-block: 16px;
-    padding-inline: 30px;
-    border-radius: var(--Firm-2, 12px);
-    border: 1px solid var(--Color-Semantic-Border-borderTertiary, #E0E0E0);
-    color: var(--Color-Semantic-Content-contentPrimary, #1F1F1F);
-    font-family: Helvetica Now Display;
-    font-size: 16px;
+    color: #000;
+    font-family: Roboto Condensed;
+    font-size: 26px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; 
-    cursor: pointer;
+    line-height: 34px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.link__rules{
+    background: #746BEB;
 }

@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <AnimatePresence mode="wait">
       <TsPage Color={"#fed9b7"}>
-        <RolString string=" WE CAN DO /" />
         <Hero />
         <RolString string=" WE CAN DO /" />
       </TsPage>

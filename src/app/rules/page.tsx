@@ -2,6 +2,7 @@ import { Container } from "@/components/container/Container";
 import TsPage from "@/components/tsPage/TsPage";
 import React from "react";
 import styles from "./style.module.css";
+import Image from "next/image";
 
 export default function Rules() {
   return (
@@ -9,6 +10,9 @@ export default function Rules() {
       <section className={styles.rules}>
         <Container>
           <div className={styles.rules__box}>
+            <div className={styles.image__box}>
+              <Image src="/rules/ex.png" width={100} height={100} alt="" />
+            </div>
             <h1 className={styles.rules__title}>Alias (гра)</h1>
             <p className={styles.descriptions}>
               Настільна командна гра, в якій треба максимально швидко пояснити

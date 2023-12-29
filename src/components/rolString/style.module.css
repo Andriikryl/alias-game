@@ -3,8 +3,6 @@
     overflow: hidden;
     user-select: none;
     position: relative;
-    -webkit-mask-image: linear-gradient(to right, hsla(0deg, 0%, 0%, 0), hsl(0deg, 0%, 0%) 20%, hsl(0deg, 0%, 0%) 80%, hsla(0deg, 0%, 0%, 0));
-    mask-image: linear-gradient(to right, hsla(0deg, 0%, 0%, 0), hsl(0deg, 0%, 0%) 20%, hsl(0deg, 0%, 0%) 80%, hsla(0deg, 0%, 0%, 0));
     z-index: 10;
   }
   
@@ -20,14 +18,15 @@
   }
 
   .marquee__item{
-    --size-lg: 200px;
-    font-family: 'Fairwall Sans';
-    font-style: normal;
-    font-weight: 300;
+    --size-lg: 85px;
     font-size: clamp(40px, 5vw + 2rem, var(--size-lg) );
     line-height: 104.4%;
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     text-align: center;
-    -webkit-text-stroke-color: hsla(47, 100%, 50%, 1);
+    -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
     color: transparent;
     text-transform: uppercase;

@@ -36,7 +36,8 @@ ol[role='list'] {
 body {
   min-height: 100vh;
   line-height: 1.5;
-  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background: hsl(43, 100%, 50%);
+  background-image: radial-gradient(#555 1px, transparent 1px);
   background-size: 16px 16px;
   position: relative;
   overflow-x: hidden;

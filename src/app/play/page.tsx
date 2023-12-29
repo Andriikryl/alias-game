@@ -8,6 +8,7 @@ import { NumberBlock } from "@/components/numberBlock/NumberBlock";
 import { data } from "@/data/Data";
 import VisuallyHidden from "@/components/visuallyhidden/VisuallyHidden";
 import Home from "@/components/icons/Home";
+import Image from "next/image";
 
 const tabs = ["30", "60", "120"];
 
@@ -99,41 +100,51 @@ export default function Play() {
                 </button>
               </div>
             ) : (
-              <div className={styles.flex__group}>
-                <p className={styles.time__title}>Chose game time</p>
-                <div className={styles.btn__groupTime}>
+              <div>
+                <div>
+                  <Image
+                    src="/play/run.png"
+                    width={100}
+                    height={100}
+                    alt="image"
+                  />
+                </div>
+                <div className={styles.flex__group}>
+                  <p className={styles.time__title}>Chose game time</p>
+                  <div className={styles.btn__groupTime}>
+                    <button
+                      onClick={() => handleButtonTimeClick(30)}
+                      className={clsx(styles.btn__time, {
+                        [styles.active]: time === 30,
+                      })}
+                    >
+                      30
+                    </button>
+                    <button
+                      onClick={() => handleButtonTimeClick(60)}
+                      className={clsx(styles.btn__time, {
+                        [styles.active]: time === 60,
+                      })}
+                    >
+                      60
+                    </button>
+                    <button
+                      onClick={() => handleButtonTimeClick(120)}
+                      className={clsx(styles.btn__time, {
+                        [styles.active]: time === 120,
+                      })}
+                    >
+                      120
+                    </button>
+                  </div>
                   <button
-                    onClick={() => handleButtonTimeClick(30)}
-                    className={clsx(styles.btn__time, {
-                      [styles.active]: time === 30,
-                    })}
+                    className={styles.paly__btn}
+                    onClick={handelClickPlay}
+                    disabled={!isTimeSelected}
                   >
-                    30
-                  </button>
-                  <button
-                    onClick={() => handleButtonTimeClick(60)}
-                    className={clsx(styles.btn__time, {
-                      [styles.active]: time === 60,
-                    })}
-                  >
-                    60
-                  </button>
-                  <button
-                    onClick={() => handleButtonTimeClick(120)}
-                    className={clsx(styles.btn__time, {
-                      [styles.active]: time === 120,
-                    })}
-                  >
-                    120
+                    play
                   </button>
                 </div>
-                <button
-                  className={styles.paly__btn}
-                  onClick={handelClickPlay}
-                  disabled={!isTimeSelected}
-                >
-                  play
-                </button>
               </div>
             )}
           </div>

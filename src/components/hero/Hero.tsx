@@ -5,6 +5,7 @@ import styles from "./style.module.css";
 import MenImage from "public/face/men.svg";
 import WemanImage from "public/face/women.svg";
 import Link from "next/link";
+import clsx from "clsx";
 
 export default function Hero() {
   return (
@@ -12,23 +13,10 @@ export default function Hero() {
       <Container>
         <div className={styles.hero}>
           <div className={styles.title__box}>
+            <div className={styles.image__box}>
+              <Image src="/hero/sun.png" width={230} height={230} alt="men" />
+            </div>
             <h1 className={styles.hero__title}>Welcom to the alias game</h1>
-          </div>
-          <div className={styles.qa__box}>
-            <div className={styles.flex__group}>
-              <Image src="/hero/man.svg" width={54} height={54} alt="men" />
-              <div className={styles.info__bloc}>
-                <p>$&@+?#</p>
-              </div>
-            </div>
-            <div className={styles.flex__group}>
-              <div className={styles.info__bloc}>
-                <p>???</p>
-              </div>
-              <div className={styles.image__boxWem}>
-                <Image src="/hero/weman.svg" width={54} height={54} alt="men" />
-              </div>
-            </div>
           </div>
           <div>
             <ul className={styles.list} role="list">
@@ -38,7 +26,10 @@ export default function Hero() {
                 </Link>
               </li>
               <li className={styles.list__item}>
-                <Link className={styles.link} href={"rules"}>
+                <Link
+                  className={clsx(styles.link, styles.link__rules)}
+                  href={"rules"}
+                >
                   rules
                 </Link>
               </li>
