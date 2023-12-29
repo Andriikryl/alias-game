@@ -9,6 +9,7 @@ import { data } from "@/data/Data";
 import VisuallyHidden from "@/components/visuallyhidden/VisuallyHidden";
 import Home from "@/components/icons/Home";
 import Image from "next/image";
+import { Modal } from "@/components/modal/Madal";
 
 const tabs = ["30", "60", "120"];
 
@@ -20,6 +21,7 @@ export default function Play() {
   const [missed, setMissed] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [isTimeSelected, setIsTimeSelected] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handelClickSkip = () => {
     setCurrent((prev) => prev + 1);
@@ -44,6 +46,7 @@ export default function Play() {
     setMissed(0);
     setIsTimerRunning((prev) => !prev);
     setIsTimeSelected(false);
+    setIsModalOpen(false);
   };
 
   const minutesString = String(Math.floor(time / 60)).padStart(2, "0");
@@ -51,105 +54,119 @@ export default function Play() {
   useEffect(() => {
     if (isTimerRunning) {
       const interval = setInterval(() => {
-        setTime((s) => Math.max(s - 1, 0));
+        setTime((s) => {
+          if (s === 1) {
+            setIsModalOpen(true);
+          }
+          return Math.max(s - 1, 0);
+        });
       }, 1000);
-
       return () => {
         clearInterval(interval);
       };
     }
-  }, [isTimerRunning]);
+  }, [isTimerRunning, time]);
 
   return (
-    <TsPage Color={"#a2d2ff"}>
-      <section className={styles.play}>
-        <Container>
-          <div className={styles.play__box}>
-            {gameStatus ? (
-              <div className={styles.wrapper}>
-                <div className={styles.time__wrapper}>
-                  <p className={styles.time}>
-                    {" "}
-                    {minutesString}:{secondsString}
-                  </p>
-                </div>
-                <div className={styles.word__block}>
-                  <p className={styles.word}>{data[current].title}</p>
-                </div>
-                <div className={styles.score__group}>
-                  <NumberBlock value={answered} className={styles.answered} />
-                  <NumberBlock value={missed} className={styles.missed} />
-                </div>
-                <div className={styles.btn__group}>
-                  <button
-                    className={clsx(styles.control__btn, styles.skip__btn)}
-                    onClick={handelClickSkip}
-                  >
-                    missed
-                  </button>
-                  <button
-                    className={clsx(styles.control__btn, styles.acept__btn)}
-                    onClick={handelClickUnser}
-                  >
-                    answered
-                  </button>
-                </div>
-                <button className={styles.btn__back} onClick={handelClickBack}>
-                  <VisuallyHidden>back home</VisuallyHidden>
-                  <Home />
-                </button>
-              </div>
-            ) : (
-              <div>
-                <div>
-                  <Image
-                    src="/play/run.png"
-                    width={100}
-                    height={100}
-                    alt="image"
-                  />
-                </div>
-                <div className={styles.flex__group}>
-                  <p className={styles.time__title}>Chose game time</p>
-                  <div className={styles.btn__groupTime}>
+    <>
+      <TsPage Color={"#a2d2ff"}>
+        <section className={styles.play}>
+          <Container>
+            <div className={styles.play__box}>
+              {gameStatus ? (
+                <div className={styles.wrapper}>
+                  <div className={styles.time__wrapper}>
+                    <p className={styles.time}>
+                      {" "}
+                      {minutesString}:{secondsString}
+                    </p>
+                  </div>
+                  <div className={styles.word__block}>
+                    <p className={styles.word}>{data[current].title}</p>
+                  </div>
+                  <div className={styles.score__group}>
+                    <NumberBlock value={answered} className={styles.answered} />
+                    <NumberBlock value={missed} className={styles.missed} />
+                  </div>
+                  <div className={styles.btn__group}>
                     <button
-                      onClick={() => handleButtonTimeClick(30)}
-                      className={clsx(styles.btn__time, {
-                        [styles.active]: time === 30,
-                      })}
+                      className={clsx(styles.control__btn, styles.skip__btn)}
+                      onClick={handelClickSkip}
                     >
-                      30
+                      missed
                     </button>
                     <button
-                      onClick={() => handleButtonTimeClick(60)}
-                      className={clsx(styles.btn__time, {
-                        [styles.active]: time === 60,
-                      })}
+                      className={clsx(styles.control__btn, styles.acept__btn)}
+                      onClick={handelClickUnser}
                     >
-                      60
-                    </button>
-                    <button
-                      onClick={() => handleButtonTimeClick(120)}
-                      className={clsx(styles.btn__time, {
-                        [styles.active]: time === 120,
-                      })}
-                    >
-                      120
+                      answered
                     </button>
                   </div>
                   <button
-                    className={styles.paly__btn}
-                    onClick={handelClickPlay}
-                    disabled={!isTimeSelected}
+                    className={styles.btn__back}
+                    onClick={handelClickBack}
                   >
-                    play
+                    <VisuallyHidden>back home</VisuallyHidden>
+                    <Home />
                   </button>
                 </div>
-              </div>
+              ) : (
+                <div>
+                  <div>
+                    <Image
+                      src="/play/run.png"
+                      width={100}
+                      height={100}
+                      alt="image"
+                    />
+                  </div>
+                  <div className={styles.flex__group}>
+                    <p className={styles.time__title}>Chose game time</p>
+                    <div className={styles.btn__groupTime}>
+                      <button
+                        onClick={() => handleButtonTimeClick(30)}
+                        className={clsx(styles.btn__time, {
+                          [styles.active]: time === 30,
+                        })}
+                      >
+                        30
+                      </button>
+                      <button
+                        onClick={() => handleButtonTimeClick(60)}
+                        className={clsx(styles.btn__time, {
+                          [styles.active]: time === 60,
+                        })}
+                      >
+                        60
+                      </button>
+                      <button
+                        onClick={() => handleButtonTimeClick(120)}
+                        className={clsx(styles.btn__time, {
+                          [styles.active]: time === 120,
+                        })}
+                      >
+                        120
+                      </button>
+                    </div>
+                    <button
+                      className={styles.paly__btn}
+                      onClick={handelClickPlay}
+                      disabled={!isTimeSelected}
+                    >
+                      play
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+            {isModalOpen && (
+              <Modal title="Time's Up" handleDismiss={() => handelClickBack()}>
+                <p className={styles.modal__score}>Your score : {answered}</p>
+              </Modal>
             )}
-          </div>
-        </Container>
-      </section>
-    </TsPage>
+          </Container>
+        </section>
+      </TsPage>
+    </>
   );
 }

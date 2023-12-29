@@ -181,3 +181,9 @@
     color: #edf6f9;
     border: 3px solid #ffc300;
 }
+.modal__score{
+    border: 2px solid var(--Rectangle-Card-Stroke, #000);
+    background: #ECAFF6;
+    box-shadow: 4px 4px 0px 0px #000;
+    padding: 20px;
+}

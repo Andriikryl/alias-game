@@ -14,12 +14,16 @@
     "next": "14.0.4",
     "react": "^18",
     "lodash.range": "^3.2.0",
+    "react-focus-lock": "^2.9.6",
+    "is-hotkey": "^0.2.0",
+    "react-remove-scroll": "^2.5.7",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/is-hotkey": "^0.1.8",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "typescript": "^5",

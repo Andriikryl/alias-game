@@ -1,0 +1,58 @@
+.wrapper{
+    padding-block-start: 150px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background-color: hsl(189, 75%, 75%, .5);
+}
+
+.dialog{
+    margin: auto;
+    padding: 30px;
+    width: 320px;
+    height: 320px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #000;
+    background: #9DCAFF;
+    box-shadow: 5px 5px 0px 0px #000;
+    position: relative;
+}
+.dialog::after{
+    content: "";
+    display: block;
+    background-image: url("/modul/star.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.closeBtn{
+    aspect-ratio: 1/1;
+    border: 1.579px solid var(--Black, #000);
+    background: #FDFFB0;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px 0px #000;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 500ms ease-in-out;
+}
+
+.closeBtn:hover{
+    background-color: #e63946;
+    color: #f8f9fa;
+    border: white;
+}
